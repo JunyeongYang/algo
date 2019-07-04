@@ -8,9 +8,9 @@
 // 피벗을 기준으로 2개의 경우로 나눠서 다시 정렬 시작 << 포인트!!
 // 시간복잡도 O(N*logN)
 
-const inputData = [1, 10, 10, 5, 8, 7, 7, 6, 4, 3, 2, 9]
+const inputData = [11, 1, 10, 10, 5, 8, 7, 7, 6, 4, 3, 2, 9]
 
-class quickSort{
+class quickSort1{
   constructor(arr){
     this.sort(arr, 0, arr.length - 1);
   }
@@ -60,4 +60,41 @@ class quickSort{
   }
 }
 
-new quickSort(inputData);
+//제일 우측을 피벗으로 설정
+class quickSort2 {
+  constructor(arr) {
+    this.sort(arr, 0, arr.length-1);
+    console.log(arr);
+  }
+
+  sort(arr, left, right) {
+    if(left < right) {
+      const p = this.partition(arr, left, right);
+
+      this.sort(arr, left, p - 1);
+      this.sort(arr, p + 1, right)
+    }
+  }
+
+  partition(arr, left, right) {
+    const pivot = arr[right];
+    let i = (left - 1);
+
+    for(let j = left; j <= right - 1; j ++) {
+      if(arr[j] <= pivot) {
+        i++;
+        this.swap(arr, i, j);
+      }
+    }
+    this.swap(arr, i + 1, right);
+    return (i + 1);
+  }
+
+  swap(arr, i, j) {
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+}
+
+new quickSort2(inputData);
