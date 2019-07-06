@@ -35,6 +35,6 @@ class MakeBrackets{
 
 (()=>{
   const arr = [];
-  new MakeBrackets(arr, 3);
+  new MakeBrackets(arr, 1);
   console.log(arr);
 })();
