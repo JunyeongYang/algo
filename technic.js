@@ -23,5 +23,24 @@ function getUniqueEl() {
   console.log(arr , str);
 }
 
-getUniqueEl();
+//배열이나 문자열에서 i번째 인덱스 내용을 삭제하고 싶을때
+//원본을 보존하면서
+function slice() {
+  const arr = [1,2,3,4,5];
+  const newArr = [...arr.slice(0,2), ...arr.slice(3)];
+
+  console.log(newArr);
+}
+
+// 배열에 규칙적인 연속된 값 할당하기
+function fillNmap() {
+  const arr = Array(5).fill(1).map( (el, i) => 
+    el + i
+  )
+  console.log(arr);
+}
+
 deleteDuplicate();
+getUniqueEl();
+slice();
+fillNmap();
