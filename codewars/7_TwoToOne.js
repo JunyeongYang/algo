@@ -9,7 +9,7 @@
 // a = "abcdefghijklmnopqrstuvwxyz"
 // longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
 
-// ref: https://www.codewars.com/kata/two-to-one/train/javascript
+// from: https://www.codewars.com/kata/two-to-one/train/javascript
 
 const longest = (s1, s2) => [...new Set(s1 + s2)].sort().join('');
 
