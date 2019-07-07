@@ -30,7 +30,7 @@
 // from: https://www.codewars.com/kata/weight-for-weight/train/javascript
 
 function sum(list) {
-  return list.map( el => el.split('').reduce((s,c) => parseInt(s)+parseInt(c) ,0));
+  return list.map( el => el.split('').reduce((s,c) => parseInt(s)+parseInt(c) ,0)).sort((a,b) => a - b);
 }
 
 console.log(sum(['56' ,'65' ,'74' ,'100', '99', '68', '86', '180', '90']))
