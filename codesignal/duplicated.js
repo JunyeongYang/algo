@@ -35,4 +35,13 @@ function duplicated(a) {
   return -1
 }
 
-console.log(duplicated([1,3,2,2,3]))
+function duplicated2(a) {
+  for(i of a) {
+    let p = Math.abs(i) - 1
+    if(a[p] < 0) return p + 1
+    a[p] = a[p] * -1
+  }
+  return -1
+}
+
+console.log(duplicated2([1,3,2,2,3]))
